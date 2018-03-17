@@ -42,6 +42,7 @@
     "promise": "^7.1.1",
     "qiniu": "^6.1.13",
     "request": "^2.81.0",
+    "request-promise": "^4.2.2",
     "speakeasy": "^2.0.0",
     "unique-concat": "^0.2.2",
     "validator": "^5.2.0",

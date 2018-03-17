@@ -10265,3 +10265,76 @@
 {"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T09:51:06.187Z"}
 {"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T09:51:06.206Z"}
 {"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T09:51:06.267Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:11:28.833Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:11:28.859Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:11:28.860Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:11:28.880Z"}
+{"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T13:11:28.958Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:28:29.362Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:28:29.382Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:28:29.383Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:28:29.395Z"}
+{"date":"Sat Mar 17 2018 09:28:29 GMT-0400 (EDT)","process":{"pid":31287,"uid":501,"gid":20,"cwd":"/Users/zhangwei/Desktop/FullStack/VitacoinVendorDemo","execPath":"/usr/local/bin/node","version":"v6.10.0","argv":["/usr/local/bin/node","/Users/zhangwei/Desktop/FullStack/VitacoinVendorDemo/server.js"],"memoryUsage":{"rss":68165632,"heapTotal":46362624,"heapUsed":31816920,"external":18941327}},"os":{"loadavg":[1.64794921875,2.75927734375,2.9560546875],"uptime":579608},"trace":[{"column":15,"file":"module.js","function":"Module._resolveFilename","line":469,"method":"_resolveFilename","native":false},{"column":25,"file":"module.js","function":"Module._load","line":417,"method":"_load","native":false},{"column":17,"file":"module.js","function":"Module.require","line":497,"method":"require","native":false},{"column":19,"file":"internal/module.js","function":"require","line":20,"method":null,"native":false},{"column":17,"file":"/Users/zhangwei/Desktop/FullStack/VitacoinVendorDemo/routes/user.js","function":null,"line":3,"method":null,"native":false},{"column":32,"file":"module.js","function":"Module._compile","line":570,"method":"_compile","native":false},{"column":10,"file":"module.js","function":"Module._extensions..js","line":579,"method":".js","native":false},{"column":32,"file":"module.js","function":"Module.load","line":487,"method":"load","native":false},{"column":12,"file":"module.js","function":"tryModuleLoad","line":446,"method":null,"native":false},{"column":3,"file":"module.js","function":"Module._load","line":438,"method":"_load","native":false},{"column":17,"file":"module.js","function":"Module.require","line":497,"method":"require","native":false},{"column":19,"file":"internal/module.js","function":"require","line":20,"method":null,"native":false},{"column":22,"file":"/Users/zhangwei/Desktop/FullStack/VitacoinVendorDemo/routes/index.js","function":null,"line":5,"method":null,"native":false},{"column":32,"file":"module.js","function":"Module._compile","line":570,"method":"_compile","native":false},{"column":10,"file":"module.js","function":"Module._extensions..js","line":579,"method":".js","native":false},{"column":32,"file":"module.js","function":"Module.load","line":487,"method":"load","native":false},{"column":12,"file":"module.js","function":"tryModuleLoad","line":446,"method":null,"native":false},{"column":3,"file":"module.js","function":"Module._load","line":438,"method":"_load","native":false},{"column":17,"file":"module.js","function":"Module.require","line":497,"method":"require","native":false},{"column":19,"file":"internal/module.js","function":"require","line":20,"method":null,"native":false},{"column":5,"file":"/Users/zhangwei/Desktop/FullStack/VitacoinVendorDemo/config/initializers/app.js","function":"start","line":102,"method":null,"native":false},{"column":24,"file":"/Users/zhangwei/Desktop/FullStack/VitacoinVendorDemo/node_modules/async/dist/async.js","function":null,"line":3866,"method":null,"native":false}],"stack":["Error: Cannot find module 'request-promise'","    at Function.Module._resolveFilename (module.js:469:15)","    at Function.Module._load (module.js:417:25)","    at Module.require (module.js:497:17)","    at require (internal/module.js:20:19)","    at Object.<anonymous> (/Users/zhangwei/Desktop/FullStack/VitacoinVendorDemo/routes/user.js:3:17)","    at Module._compile (module.js:570:32)","    at Object.Module._extensions..js (module.js:579:10)","    at Module.load (module.js:487:32)","    at tryModuleLoad (module.js:446:12)","    at Function.Module._load (module.js:438:3)","    at Module.require (module.js:497:17)","    at require (internal/module.js:20:19)","    at Object.<anonymous> (/Users/zhangwei/Desktop/FullStack/VitacoinVendorDemo/routes/index.js:5:22)","    at Module._compile (module.js:570:32)","    at Object.Module._extensions..js (module.js:579:10)","    at Module.load (module.js:487:32)","    at tryModuleLoad (module.js:446:12)","    at Function.Module._load (module.js:438:3)","    at Module.require (module.js:497:17)","    at require (internal/module.js:20:19)","    at start (/Users/zhangwei/Desktop/FullStack/VitacoinVendorDemo/config/initializers/app.js:102:5)","    at /Users/zhangwei/Desktop/FullStack/VitacoinVendorDemo/node_modules/async/dist/async.js:3866:24"],"level":"error","message":"uncaughtException: Cannot find module 'request-promise'","timestamp":"2018-03-17T13:28:29.452Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:32:56.318Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:32:56.334Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:32:56.335Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:32:56.357Z"}
+{"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T13:32:56.773Z"}
+{"level":"error","message":"[BET DASHBOARD] 500 Error: Internal Server Error","timestamp":"2018-03-17T13:33:13.980Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:34:36.984Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:34:37.012Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:34:37.015Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:34:37.040Z"}
+{"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T13:34:37.516Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:34:46.165Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:35:56.291Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:35:56.323Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:35:56.325Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:35:56.346Z"}
+{"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T13:35:56.889Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:36:45.074Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:37:19.222Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:37:19.248Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:37:19.249Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:37:19.264Z"}
+{"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T13:37:19.782Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:38:10.813Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:40:10.813Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:41:00.754Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:41:00.771Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:41:00.772Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:41:00.800Z"}
+{"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T13:41:01.502Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:41:04.687Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:41:04.701Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:41:04.702Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:41:04.719Z"}
+{"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T13:41:05.070Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:41:17.615Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:43:17.647Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:43:33.182Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:43:33.282Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:43:33.283Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:43:33.298Z"}
+{"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T13:43:34.192Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:43:50.306Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:45:50.308Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:46:29.529Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:46:29.585Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:46:29.586Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:46:29.615Z"}
+{"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T13:46:30.671Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:46:38.759Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:47:18.743Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:47:18.765Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:47:18.766Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:47:18.780Z"}
+{"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T13:47:19.148Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:47:44.343Z"}
+{"level":"info","message":"[Server] Starting [BET DASHBOARD] initialization","timestamp":"2018-03-17T13:48:29.690Z"}
+{"level":"info","message":"[BET DASHBOARD] HTTP Server Listening on Port 3000","timestamp":"2018-03-17T13:48:29.719Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing view engine","timestamp":"2018-03-17T13:48:29.720Z"}
+{"level":"info","message":"[BET DASHBOARD] Initializing routes","timestamp":"2018-03-17T13:48:29.744Z"}
+{"level":"info","message":"[BET DASHBOARD] initialized SUCCESSFULLY","timestamp":"2018-03-17T13:48:30.213Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:48:36.653Z"}
+{"level":"info","message":"Call Payment API","timestamp":"2018-03-17T13:48:59.081Z"}

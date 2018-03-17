@@ -1,6 +1,7 @@
 var _ = require('lodash');
 var async = require('async');
-
+var apiCaller = require('request-promise');
+var logger = require('../utils/log/logger');
 
 var userController = {
 
@@ -61,6 +62,14 @@ var userController = {
             errors: req.flash("errors"),
             success: req.flash("success")
         });
+    },
+
+    callPayAPI: function (req, res) {
+
+        logger.info('Call Payment API');
+        var jsonResult = "{'test': 'test'}";
+        res.send(JSON.stringify(jsonResult));
+
     }
 
 };

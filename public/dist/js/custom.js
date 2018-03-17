@@ -15,6 +15,21 @@ $(function () {
             type: 'success',
             allow_dismiss: false,
             showProgressbar: true,
+            onShow: function () {
+                //call pay api
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:3000/pay",
+                    contentType: 'application/json',
+                    success: function (data) {
+                        Success = true;//doesnt goes here
+                    },
+                    error: function (textStatus, errorThrown) {
+                        Success = false;//doesnt goes here
+                        console.log('f');
+                    }
+                });
+            },
             onClosed: function () {
                 $('#buyBtn').hide();
                 $('#downloadBtn').show();

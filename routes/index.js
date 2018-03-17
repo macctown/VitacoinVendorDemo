@@ -17,6 +17,7 @@ module.exports = function(app, logger) {
     app.get('/transactions', userController.getTxns);
     app.get('/records', userController.getRecords);
     app.get('/pay', userController.callPayAPI);
+    app.get('/load', userController.loadDemoData);
 
     // Set 404 response for non-exist api routes
     app.use(function(req, res, next) {

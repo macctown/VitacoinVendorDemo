@@ -21,12 +21,12 @@ $(function () {
                     type: "GET",
                     url: "http://localhost:3000/pay",
                     contentType: 'application/json',
+                    async: false,
                     success: function (data) {
                         Success = true;//doesnt goes here
                     },
                     error: function (textStatus, errorThrown) {
                         Success = false;//doesnt goes here
-                        console.log('f');
                     }
                 });
             },

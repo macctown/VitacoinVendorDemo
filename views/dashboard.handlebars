@@ -1,0 +1,244 @@
+{{> dashboardHeader}}
+<style>
+    /* Center the loader */
+    #loader {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        z-index: 1;
+        width: 150px;
+        height: 150px;
+        margin: 55px 0 0 -75px;
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Add animation to "page content" */
+    .animate-bottom {
+        position: relative;
+        -webkit-animation-name: animatebottom;
+        -webkit-animation-duration: 1s;
+        animation-name: animatebottom;
+        animation-duration: 1s
+    }
+
+    @-webkit-keyframes animatebottom {
+        from { bottom:-100px; opacity:0 }
+        to { bottom:0px; opacity:1 }
+    }
+
+    @keyframes animatebottom {
+        from{ bottom:-100px; opacity:0 }
+        to{ bottom:0; opacity:1 }
+    }
+
+    #result {
+        display: none;
+        text-align: center;
+    }
+</style>
+<div class="wrapper" style="height: auto;">
+
+    {{>nav}}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                {{subtitle}}
+            </h1>
+        </section>
+
+        {{> flash}}
+        <!-- Main content -->
+        <section class="content">
+            <!-- Small boxes (Stat box) -->
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="box box-default">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Data Entry Filter</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Gender</label>
+                                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                            <option selected="selected">Any</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                    <!-- /.form-group -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Age</label>
+                                        <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select Age" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                            <option>Under 20</option>
+                                            <option>21-30</option>
+                                            <option>31-40</option>
+                                            <option>41-50</option>
+                                            <option>51-60</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                            <div class="row">
+                                <a href="#" id="searchBtn" class="btn btn-primary pull-right" style="margin-right: 20px"><b>Search</b></a>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <div class="box">
+                        <div id="loader"></div>
+                        <div id="result">
+                            <div class="box box-success">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title pull-left">Data Distribution</h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="chart">
+                                        <canvas id="barChart" style="height: 230px; width: 475px;" height="460" width="950"></canvas>
+                                        <a href="#" id="buyBtn" data-toggle="modal" data-target="#myModal" class="btn btn-success"><i class="ion-ios-cart-outline"></i> <b>Pay</b></a>
+                                        <a href="#" id="downloadBtn" style="display:none" download="/data-0xe16dd8e63ee2bddb8753f5c4876b652645d84185c77147ff6e99ddaef198876b.xlsx" class="btn btn-info"><i class="ion-ios-cloud-download-outline"></i> <b>Download</b></a>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                        <!-- Profile Image -->
+                        <div class="box box-primary">
+                            <div class="box-body box-profile">
+                                <img class="profile-user-img img-responsive img-circle" src="https://www.combankmed.com/wp-content/uploads/2015/06/Male-Doctor-Avatar.png" alt="User profile picture">
+
+                                <h3 class="profile-username text-center">Nina Mcintire</h3>
+
+                                <p class="text-muted text-center">Health Data Analyst</p>
+
+                                <ul class="list-group list-group-unbordered">
+                                    <li class="list-group-item">
+                                        <b>Available</b> <a class="pull-right"><p id="avtokens">1,322</p></a><b>BET</b>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Pending</b> <a class="pull-right">543</a><b>BET</b>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <b>Total</b> <a class="pull-right"><p id="totokens">1,865</p></a><b>BET</b>
+                                    </li>
+                                    <a href="#" class="btn btn-primary btn-block"><b>Account</b></a>
+                                </ul>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Checkout</h4>
+            </div>
+            <div class="modal-body">
+                <div id="spc-order-summary" class="a-row">
+                    <h3 class="a-spacing-base a-spacing-top-micro">Order Summary</h3>
+                    <p>TxHash: 0xe16dd8e63ee2bddb8753f5c4876b652645d84185c77147ff6e99ddaef198876b</p>
+                    <div id="subtotals-marketplace-table" class="a-row a-size-small">
+                        <table data-testid="" class="col-md-12">
+
+                            <tbody>
+                            <tr>
+                                <td >
+                                    Qty :
+                                </td>
+                                <td >
+                                    1,000
+                                </td>
+                            </tr>
+
+
+                            <tr data-testid="" class="order-summary-separator">
+                                <td></td>
+                                <td class="a-span3 cell-separator"></td>
+                            </tr>
+
+
+                            <tr data-testid="" class="order-summary-unidenfitied-style">
+                                <td class="a-text-left">
+                                    Total:
+                                </td>
+                                <td class="a-text-right a-align-bottom aok-nowrap">
+                                    100 VTD
+                                </td>
+                            </tr>
+
+
+                            <tr data-testid="" class="order-summary-unidenfitied-style">
+                                <td class="a-text-left">
+                                    Estimated txn fee to be collected:
+                                </td>
+                                <td class="a-text-right a-align-bottom aok-nowrap">
+                                    5 VTD
+                                </td>
+                            </tr>
+
+
+                            <tr class="order-summary-grand-total">
+                                <td colspan="2" class="cell-separator"><hr class="a-spacing-mini a-divider-normal"></td>
+                            </tr>
+                            <tr data-testid="">
+                                <td class="a-color-price a-size-medium a-text-left a-text-bold">
+                                    Order total:
+                                </td>
+                                <td class="a-color-price a-size-medium a-text-right a-align-bottom aok-nowrap grand-total-price a-text-bold">
+                                    105 VTD
+                                </td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="modal-footer" style="border-top-color: transparent;">
+                <button type="button" class="btn btn-info" id="orderBtn"  data-dismiss="modal">Place Order</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /#wrapper -->

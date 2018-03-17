@@ -1,0 +1,6 @@
+{"level":"info","message":"[Server] Starting [ADMIN SERVICE] initialization","timestamp":"2017-09-24T14:41:01.758Z"}
+{"level":"info","message":"[ADMIN SERVICE] HTTP Server Listening on Port 3000","timestamp":"2017-09-24T14:41:01.793Z"}
+{"level":"info","message":"[ADMIN SERVICE] Initializing view engine","timestamp":"2017-09-24T14:41:01.794Z"}
+{"level":"info","message":"[ADMIN SERVICE] Initializing routes","timestamp":"2017-09-24T14:41:01.861Z"}
+{"level":"info","message":"[ADMIN SERVICE] initialized SUCCESSFULLY","timestamp":"2017-09-24T14:41:03.032Z"}
+{"level":"info","message":"MongoDB Connection is Created on : mongodb://localhost:27017/cogAdmin","timestamp":"2017-09-24T14:41:03.091Z"}

@@ -1,0 +1,13 @@
+<p>This is a template of donor confirmation email.</p>
+<p>Hi {{donor.name}}, thank you very much for your donation!</p>
+<p>Please use this transaction number {{donation.transactionId}} and your email: {{donor.email}} to retrieve your donation info.</p>
+
+{{#each recordsInfo}}
+    <p>Please send your donation {{this.donationAmount}} RMB for {{this.name}}to this account:</p>
+    <p>{{this.girlId.bankAccount}}</p>
+    <p>{{this.girlId.bankAddress}}</p>
+    <p>Teacher Info:</p>
+    <p>Name: {{this.girlId.teacherName}}</p>
+    <p>Phone: {{this.girlId.teacherPhone}}</p>
+    <p>Email: {{this.girlId.teacherEmail}}</p>
+{{/each}}

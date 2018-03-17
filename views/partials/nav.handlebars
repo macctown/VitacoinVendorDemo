@@ -1,0 +1,111 @@
+<header class="main-header">
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>V</b>TD</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Vita</b>Data</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- Tasks: style can be found in dropdown.less -->
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="https://www.combankmed.com/wp-content/uploads/2015/06/Male-Doctor-Avatar.png" class="user-image" alt="User Image">
+                        <span class="hidden-xs">{{user.email}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="https://www.combankmed.com/wp-content/uploads/2015/06/Male-Doctor-Avatar.png" class="img-circle" alt="User Image">
+
+                            <p>
+                                {{user.email}}
+                                <small>Member since Nov. 2012</small>
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="/profile" class="btn btn-default btn-flat">Profile</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="/signout" class="btn btn-default btn-flat">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+            <li class="header"><i class="fa fa-dashboard"></i> Dashboard</li>
+            <li class="treeview active">
+                <a href="#">
+                    <i class="fa fa-bar-chart"></i>
+                    <span>Data Management</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/dashboard"><i class="fa fa-folder"></i> Dashboard</a></li>
+                    <li><a href="/records"><i class="fa fa-pencil"></i> Health Records</a></li>
+                    <li><a href="/transactions"><i class="fa fa-envelope"></i> Transaction</a></li>
+                    <li><a href="#"><i class="fa fa-users"></i> Appointments</a></li>
+                    <li><a href="#"><i class="fa fa-female"></i>Data Analysis</a></li>
+                </ul>
+            </li>
+            <li class="treeview active">
+                <a href="#">
+                    <i class="fa fa-cog"></i>
+                    <span>Configuration</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-question-circle"></i> Data Filter</a></li>
+                    <li><a href="#"><i class="fa fa-question-circle"></i> Patient Filter</a></li>
+                </ul>
+            </li>
+            <li class="treeview active">
+                <a href="#">
+                    <i class="fa fa-users"></i>
+                    <span>Account</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-user-plus"></i> BET Wallet</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>

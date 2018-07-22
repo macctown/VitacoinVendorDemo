@@ -25,12 +25,13 @@ $(function () {
                 var index = 1;
                 res.forEach(function (record) {
                     var dataContent = record['data'];
+                    var date = new Date(dataContent["dateTime"]);
                     tableContent += "<tr> " +
                         "<th scope=\"row\">"+index+"</th> " +
                         "<td>"+dataContent["data"]+"<\/td> " +
                         "<td>"+dataContent["category"]+"<\/td> " +
                         "<td>"+dataContent["flags"]+"<\/td> " +
-                        "<td>"+dataContent["dateTime"]+"<\/td> " +
+                        "<td>"+date+"<\/td> " +
                         "<td>"+dataContent["deviceId"].split("#")[1] + ": " + dataContent["deviceId"].split("#")[2] +"<\/td> " +
                         "</tr>";
                     index++;

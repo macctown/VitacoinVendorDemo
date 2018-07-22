@@ -105,13 +105,11 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Activities</label>
-                                        <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select Activity" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                            <option>Running</option>
-                                            <option>Office</option>
-                                            <option>Sex</option>
-                                            <option>Swimming</option>
-                                            <option>Sleeping</option>
+                                        <label>Flags</label>
+                                        <select class="form-control select2 select2-hidden-accessible" id="flagOptions" multiple="" data-placeholder="Select Activity" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                            {{#each flags}}
+                                                <option value="{{this}}">{{this}}</option>
+                                            {{/each}}
                                         </select>
                                     </div>
                                 </div>
@@ -126,19 +124,20 @@
                     <div class="box">
                         <div id="loader"></div>
                         <div id="result">
-                            <div class="box box-success">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title pull-left">Data Distribution</h3>
-                                </div>
-                                <div class="box-body">
-                                    <div class="chart">
-                                        <canvas id="barChart" style="height: 230px; width: 475px;" height="460" width="950"></canvas>
-                                        <a href="#" id="buyBtn" data-toggle="modal" data-target="#myModal" class="btn btn-success"><i class="ion-ios-cart-outline"></i> <b>Pay</b></a>
-                                        <a href="https://vitacoin.herokuapp.com/data-0xe16dd8e63ee2bddb8753f5c4876b652645d84185c77147ff6e99ddaef198876b.xlsx" id="downloadBtn" style="display:none" class="btn btn-info"><i class="ion-ios-cloud-download-outline"></i> <b>Download</b></a>
-                                    </div>
-                                </div>
-                                <!-- /.box-body -->
-                            </div>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Data</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Flags</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">DeviceInfo</th>
+                                </tr>
+                                </thead>
+                                <tbody id="resTbody">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

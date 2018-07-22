@@ -2,6 +2,7 @@ var _ = require('lodash');
 var async = require('async');
 var apiCaller = require('request-promise');
 var logger = require('../utils/log/logger');
+var rp = require('request-promise');
 
 var userController = {
 
@@ -38,12 +39,38 @@ var userController = {
 
     getDashboard : function(req, res) {
 
-        res.render('dashboard', {
-            title: 'Dashboard',
-            errors: req.flash("errors"),
-            success: req.flash("success")
-        });
+        var options = {
+            method: 'POST',
+            uri: 'https://testnet.nebulas.io/v1/user/call',
+            body: {
+                from :"n1YCvLn2ivbU8h4DYfyVdYiedKr7STSeEBv",
+                to :"n1esPw4rkyzBR8jJN87ARDrBzQoWVamNZwL",
+                value :"0",
+                nonce: "0",
+                gasPrice:"1000000",
+                gasLimit:"2000000",
+                contract:{
+                    function:"getFlags",
+                    args:""
+                }
+            },
+            json: true // Automatically stringifies the body to JSON
+        };
 
+        rp(options)
+            .then(function (parsedBody) {
+               var flags = JSON.parse(parsedBody['result']['result']);
+                res.render('dashboard', {
+                    title: 'Dashboard',
+                    errors: req.flash("errors"),
+                    success: req.flash("success"),
+                    flags: flags
+                });
+            })
+            .catch(function (err) {
+                // POST failed...
+                console.log(err);
+            });
     },
 
     getTxns : function(req, res) {
@@ -84,6 +111,39 @@ var userController = {
                 res.send(JSON.stringify(err));
             });
 
+    },
+
+    searchByFlags: function (req, res) {
+        var flags = req.params.flags;
+        flags = flags.replace("*","#");
+
+        var options = {
+            method: 'POST',
+            uri: 'https://testnet.nebulas.io/v1/user/call',
+            body: {
+                from :"n1YCvLn2ivbU8h4DYfyVdYiedKr7STSeEBv",
+                to :"n1esPw4rkyzBR8jJN87ARDrBzQoWVamNZwL",
+                value :"0",
+                nonce: "0",
+                gasPrice:"1000000",
+                gasLimit:"2000000",
+                contract:{
+                    function:"getDataByFlags",
+                    args:"[\""+flags+"\"]"
+                }
+            },
+            json: true // Automatically stringifies the body to JSON
+        };
+
+        rp(options)
+            .then(function (parsedBody) {
+                var data = JSON.parse(parsedBody['result']['result']);
+                res.send(JSON.stringify(data));
+            })
+            .catch(function (err) {
+                // POST failed...
+                console.log(err);
+            });
     },
 
     loadDemoData:function (req, res) {

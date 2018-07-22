@@ -3,11 +3,48 @@ $(function () {
         "use strict";
         $("#loader").show();
         setTimeout(showResult, 2000);
-    })
+    });
 
     function showResult() {
-        $("#loader").hide();
-        $("#result").show();
+        var selectedFlags = $("#flagOptions").select2("val");
+        var flagsQuery = "";
+        selectedFlags.forEach(function(flag){
+            "use strict";
+            flagsQuery += flag + "*";
+        });
+        flagsQuery = flagsQuery.substring(0,flagsQuery.length-1);
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:3000/searchDataByFlags/" + flagsQuery,
+            contentType: 'application/json',
+            async: false,
+            success: function (data) {
+                var res = JSON.parse(data);
+
+                var tableContent = "";
+                var index = 1;
+                res.forEach(function (record) {
+                    var dataContent = record['data'];
+                    tableContent += "<tr> " +
+                        "<th scope=\"row\">"+index+"</th> " +
+                        "<td>"+dataContent["data"]+"<\/td> " +
+                        "<td>"+dataContent["category"]+"<\/td> " +
+                        "<td>"+dataContent["flags"]+"<\/td> " +
+                        "<td>"+dataContent["dateTime"]+"<\/td> " +
+                        "<td>"+dataContent["deviceId"].split("#")[1] + ": " + dataContent["deviceId"].split("#")[2] +"<\/td> " +
+                        "</tr>";
+                    index++;
+                });
+
+                $('#resTbody').append(tableContent);
+
+                $("#result").show();
+                $("#loader").hide();
+            },
+            error: function (textStatus, errorThrown) {
+                Success = false;//doesnt goes here
+            }
+        });
     }
 
     $('#orderBtn').click(function () {

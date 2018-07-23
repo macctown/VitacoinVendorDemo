@@ -83,7 +83,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Category</label>
-                                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" multiple="" data-placeholder="Select Categorys" tabindex="-1" aria-hidden="true">
+                                        <select class="form-control select2 select2-hidden-accessible" id="categoryOptions" style="width: 100%;" multiple="" data-placeholder="Select Categorys" tabindex="-1" aria-hidden="true">
                                             {{#each categorys}}
                                                 <option value="{{this}}">{{this}}</option>
                                             {{/each}}
@@ -94,7 +94,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Precondition</label>
-                                        <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select Pre-conditions" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                        <select class="form-control select2 select2-hidden-accessible" id="preconditionOptions" multiple="" data-placeholder="Select Pre-conditions" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                             {{#each preconditions}}
                                                 <option value="{{this}}">{{this}}</option>
                                             {{/each}}

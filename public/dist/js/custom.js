@@ -2,6 +2,7 @@ $(function () {
     $('#searchBtn').click(function() {
         "use strict";
         $("#loader").show();
+        $('#resTbody').append("");
         setTimeout(showResult, 2000);
     });
 
@@ -13,9 +14,26 @@ $(function () {
             flagsQuery += flag + "*";
         });
         flagsQuery = flagsQuery.substring(0,flagsQuery.length-1);
+
+        var selectedCategory = $("#categoryOptions").select2("val");
+        var categoryQuery = "";
+        selectedCategory.forEach(function(category){
+            "use strict";
+            categoryQuery += category + "*";
+        });
+        categoryQuery = categoryQuery.substring(0,categoryQuery.length-1);
+
+        var selectedPrecondition = $("#preconditionOptions").select2("val");
+        var preconditionQuery = "";
+        selectedPrecondition.forEach(function(precondition){
+            "use strict";
+            preconditionQuery += precondition + "*";
+        });
+        preconditionQuery = preconditionQuery.substring(0,preconditionQuery.length-1);
+
         $.ajax({
             type: "GET",
-            url: "http://localhost:3000/getDataByAllFilters/" + flagsQuery,
+            url: "http://localhost:3000/getDataByAllFilters/" + categoryQuery + "/" + flagsQuery + "/" + preconditionQuery,
             contentType: 'application/json',
             async: false,
             success: function (data) {
@@ -26,11 +44,12 @@ $(function () {
                 res.forEach(function (record) {
                     var dataContent = record['data'];
                     var date = new Date(dataContent["dateTime"]);
+                    console.log(dataContent["preconditions"]);
                     tableContent += "<tr> " +
                         "<th scope=\"row\">"+index+"</th> " +
                         "<td>"+dataContent["data"]+"<\/td> " +
                         "<td>"+dataContent["category"]+"<\/td> " +
-                        "<td>"+dataContent["precondition"]+"<\/td> " +
+                        "<td>"+dataContent["preconditions"]+"<\/td> " +
                         "<td>"+dataContent["flags"]+"<\/td> " +
                         "<td>"+date+"<\/td> " +
                         "<td>"+dataContent["deviceId"].split("#")[1] + ": " + dataContent["deviceId"].split("#")[2] +"<\/td> " +

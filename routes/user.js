@@ -44,7 +44,7 @@ var userController = {
             uri: 'https://testnet.nebulas.io/v1/user/call',
             body: {
                 from :"n1YCvLn2ivbU8h4DYfyVdYiedKr7STSeEBv",
-                to :"n1esPw4rkyzBR8jJN87ARDrBzQoWVamNZwL",
+                to :"n1prXwcpvtGQ5fQQY7c4KFjbWKo6BcvBA8q",
                 value :"0",
                 nonce: "0",
                 gasPrice:"1000000",
@@ -59,9 +59,10 @@ var userController = {
 
         rp(options)
             .then(function (parsedBody) {
-               var flags = JSON.parse(parsedBody['result']['result']['flag']);
-                var categorys = JSON.parse(parsedBody['result']['result']['category']);
-                var preconditions = JSON.parse(parsedBody['result']['result']['precondition']);
+                var filters = JSON.parse(parsedBody['result']['result']);
+               var flags = filters['flag'];
+                var categorys = filters['category'];
+                var preconditions = filters['precondition'];
                 res.render('dashboard', {
                     title: 'Dashboard',
                     errors: req.flash("errors"),
@@ -132,7 +133,7 @@ var userController = {
             uri: 'https://testnet.nebulas.io/v1/user/call',
             body: {
                 from :"n1YCvLn2ivbU8h4DYfyVdYiedKr7STSeEBv",
-                to :"n1esPw4rkyzBR8jJN87ARDrBzQoWVamNZwL",
+                to :"n1prXwcpvtGQ5fQQY7c4KFjbWKo6BcvBA8q",
                 value :"0",
                 nonce: "0",
                 gasPrice:"1000000",
@@ -148,6 +149,7 @@ var userController = {
         rp(options)
             .then(function (parsedBody) {
                 var data = JSON.parse(parsedBody['result']['result']);
+                console.log(data);
                 res.send(JSON.stringify(data));
             })
             .catch(function (err) {

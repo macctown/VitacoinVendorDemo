@@ -50,7 +50,7 @@ var userController = {
                 gasPrice:"1000000",
                 gasLimit:"2000000",
                 contract:{
-                    function:"getFlags",
+                    function:"getAllFilters",
                     args:""
                 }
             },
@@ -59,12 +59,16 @@ var userController = {
 
         rp(options)
             .then(function (parsedBody) {
-               var flags = JSON.parse(parsedBody['result']['result']);
+               var flags = JSON.parse(parsedBody['result']['result']['flag']);
+                var categorys = JSON.parse(parsedBody['result']['result']['category']);
+                var preconditions = JSON.parse(parsedBody['result']['result']['precondition']);
                 res.render('dashboard', {
                     title: 'Dashboard',
                     errors: req.flash("errors"),
                     success: req.flash("success"),
-                    flags: flags
+                    flags: flags,
+                    preconditions: preconditions,
+                    categorys: categorys
                 });
             })
             .catch(function (err) {
@@ -113,9 +117,15 @@ var userController = {
 
     },
 
-    searchByFlags: function (req, res) {
+    getDataByAllFilters: function (req, res) {
         var flags = req.params.flags;
         flags = flags.replace("*","#");
+
+        var categorys = req.params.categorys;
+        categorys = categorys.replace("*","#");
+
+        var preconditions = req.params.preconditions;
+        preconditions = preconditions.replace("*","#");
 
         var options = {
             method: 'POST',
@@ -128,8 +138,8 @@ var userController = {
                 gasPrice:"1000000",
                 gasLimit:"2000000",
                 contract:{
-                    function:"getDataByFlags",
-                    args:"[\""+flags+"\"]"
+                    function:"getDataByAllFilters",
+                    args:"[\""+categorys+"\", \""+flags+"\", \""+preconditions+"\"]"
                 }
             },
             json: true // Automatically stringifies the body to JSON

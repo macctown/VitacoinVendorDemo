@@ -14,7 +14,7 @@ module.exports = function(app, logger) {
     app.get('/signin', userController.getLogin);
     app.post('/signin', userController.postLogin);
     app.get('/dashboard', userController.getDashboard);
-    app.get('/searchDataByFlags/:flags', userController.searchByFlags);
+    app.get('/getDataByAllFilters/:categorys/:flags/:preconditions', userController.getDataByAllFilters);
     app.get('/transactions', userController.getTxns);
     app.get('/records', userController.getRecords);
     app.get('/pay', userController.callPayAPI);

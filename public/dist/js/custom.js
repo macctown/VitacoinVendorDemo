@@ -15,7 +15,7 @@ $(function () {
         flagsQuery = flagsQuery.substring(0,flagsQuery.length-1);
         $.ajax({
             type: "GET",
-            url: "http://localhost:3000/searchDataByFlags/" + flagsQuery,
+            url: "http://localhost:3000/getDataByAllFilters/" + flagsQuery,
             contentType: 'application/json',
             async: false,
             success: function (data) {
@@ -30,6 +30,7 @@ $(function () {
                         "<th scope=\"row\">"+index+"</th> " +
                         "<td>"+dataContent["data"]+"<\/td> " +
                         "<td>"+dataContent["category"]+"<\/td> " +
+                        "<td>"+dataContent["precondition"]+"<\/td> " +
                         "<td>"+dataContent["flags"]+"<\/td> " +
                         "<td>"+date+"<\/td> " +
                         "<td>"+dataContent["deviceId"].split("#")[1] + ": " + dataContent["deviceId"].split("#")[2] +"<\/td> " +

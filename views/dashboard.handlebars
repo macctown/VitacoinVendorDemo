@@ -82,30 +82,28 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Gender</label>
-                                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                            <option selected="selected">Any</option>
-                                            <option>Male</option>
-                                            <option>Female</option>
+                                        <label>Category</label>
+                                        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" multiple="" data-placeholder="Select Categorys" tabindex="-1" aria-hidden="true">
+                                            {{#each categorys}}
+                                                <option value="{{this}}">{{this}}</option>
+                                            {{/each}}
                                         </select>
                                     </div>
                                     <!-- /.form-group -->
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Age</label>
-                                        <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select Age" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                            <option>Under 20</option>
-                                            <option>21-30</option>
-                                            <option>31-40</option>
-                                            <option>41-50</option>
-                                            <option>51-60</option>
+                                        <label>Precondition</label>
+                                        <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select Pre-conditions" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                                            {{#each preconditions}}
+                                                <option value="{{this}}">{{this}}</option>
+                                            {{/each}}
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Flags</label>
+                                        <label>Flag</label>
                                         <select class="form-control select2 select2-hidden-accessible" id="flagOptions" multiple="" data-placeholder="Select Activity" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                             {{#each flags}}
                                                 <option value="{{this}}">{{this}}</option>
@@ -130,6 +128,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Data</th>
                                     <th scope="col">Category</th>
+                                    <th scope="col">Preconditions</th>
                                     <th scope="col">Flags</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">DeviceInfo</th>

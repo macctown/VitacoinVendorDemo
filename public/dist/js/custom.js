@@ -2,7 +2,7 @@ $(function () {
     $('#searchBtn').click(function() {
         "use strict";
         $("#loader").show();
-        $('#resTbody').append("");
+        $('#resTbody').text("");
         setTimeout(showResult, 100);
     });
 

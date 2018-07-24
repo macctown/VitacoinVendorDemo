@@ -3,7 +3,7 @@ $(function () {
         "use strict";
         $("#loader").show();
         $('#resTbody').append("");
-        setTimeout(showResult, 2000);
+        setTimeout(showResult, 100);
     });
 
     function showResult() {

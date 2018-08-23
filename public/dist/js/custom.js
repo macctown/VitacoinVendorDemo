@@ -41,11 +41,13 @@ $(function () {
 
                 var tableContent = "";
                 var index = 1;
+                res = res.reverse();
+                console.log(res);
                 res.forEach(function (record) {
                     var dataContent = record['data'];
                     var date = new Date(dataContent["dateTime"]);
-                    console.log(dataContent["preconditions"]);
-                    tableContent += "<tr> " +
+                    //console.log(dataContent["preconditions"]);
+                    tableContent = "<tr> " +
                         "<th scope=\"row\">"+index+"</th> " +
                         "<td>"+dataContent["data"]+"<\/td> " +
                         "<td>"+dataContent["category"]+"<\/td> " +
@@ -53,7 +55,7 @@ $(function () {
                         "<td>"+dataContent["flags"]+"<\/td> " +
                         "<td>"+date+"<\/td> " +
                         "<td>"+dataContent["deviceId"].split("#")[1] + ": " + dataContent["deviceId"].split("#")[2] +"<\/td> " +
-                        "</tr>";
+                        "</tr>" + tableContent;
                     index++;
                 });
 
@@ -61,6 +63,8 @@ $(function () {
 
                 $("#result").show();
                 $("#loader").hide();
+
+                $("#resTable").DataTable();
             },
             error: function (textStatus, errorThrown) {
                 Success = false;//doesnt goes here
